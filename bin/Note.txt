@@ -1,0 +1,6 @@
+
+
+- To query to database by SQL query, we have 2 ways: 
+	
+	+ Using Statement execute; (50%)
+	+ Using PrepareStatement execute; (80%)

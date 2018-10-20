@@ -1,0 +1,6 @@
+
+
+
+
+-We using JDBC Transaction help integrity data when run multiple SQL query on time. 
+Certain to all of statement of query is successful or roll-back the first data if has error!
