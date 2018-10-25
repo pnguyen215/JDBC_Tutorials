@@ -1,6 +1,73 @@
 
 
+I. JDBC - Transactions
+	- We using JDBC Transaction help integrity data when run multiple SQL query on time. 
+	- Certain to all of statement of query is successful or roll-back the first data if has error!
+II. Batch Processing  
+	- Batch help we divided into some SQL statements to group and run each group 
+	- To save data always safe!
+	- Steps to use Batch Processing with PrepareStatement Object
+			1.Create SQL statements with place-holders.
+			
+			2. Create PrepareStatement object using either prepareStatement() methods.
+			
+			3. Set auto-commit to false using setAutoCommit().
+			
+			4. Add as many as SQL statements you like into batch using addBatch() method on created statement object.
+			
+			5. Execute all the SQL statements using executeBatch() method on created statement object.
+			
+			6. Finally, commit all the changes using commit() method.
 
 
--We using JDBC Transaction help integrity data when run multiple SQL query on time. 
-Certain to all of statement of query is successful or roll-back the first data if has error!
+II. Result Sets
+
+	- The SQL statements that read data from a database query, return the data in a result set. 
+	- The SELECT statement is the standard way to select rows from a database and view them in a result set.
+	- The methods of the ResultSet interface can be broken down into three categories:
+		+ Navigation methods: Used to move the cursor around.
+		+ Get methods: Used to view the data in the columns of the current row being pointed by the cursor.
+		+ Update methods: Used to update the data in the columns of the current row. The updates can then be updated in the underlying database as well.
+		
+		A. Type of ResultSet
+			- ResultSet.TYPE_FORWARD_ONLY: The cursor can only move forward in the result set.
+			- ResultSet.TYPE_SCROLL_INSENSITIVE: The cursor can scroll forward and backward, and the result set is not sensitive to changes made by others to the database that occur after the result set was created.
+			- ResultSet.TYPE_SCROLL_SENSITIVE: The cursor can scroll forward and backward, and the result set is sensitive to changes made by others to the database that occur after the result set was created.
+		B. Concurrency of ResultSet
+			- ResultSet.CONCUR_READ_ONLY: Creates a read-only result set. This is the default
+			- ResultSet.CONCUR_UPDATABLE: Creates an update-able result set.
+		C. Navigating a Result Set
+			- There are several methods in the ResultSet interface that involve moving the cursor, including:
+			
+			+ public void beforeFirst() throws SQLException: Moves the cursor just before the first row.
+			+ public void afterLast() throws SQLException: Moves the cursor just after the last row.
+			+ public boolean first() throws SQLException: Moves the cursor to the first row.
+			+ public void last() throws SQLException: Moves the cursor to the last row.
+			+ public boolean absolute(integer row) throws SQLException: Moves the cursor to the specified row.
+			+ public boolean relative(integer row) throws SQLException: Moves the cursor the given number of rows forward or backward, from where it is currently pointing.
+			+ public boolean previous() throws SQLException: Moves the cursor to the previous row. This method returns false if the previous row is off the result set.
+			+ public boolean next() throws SQLException: Moves the cursor to the next row. This method returns false if there are no more rows in the result set.
+			+ public integer getRow() throws SQLException: Returns the row number that the cursor is pointing to.
+			+ public void moveToInsertRow() throws SQLException: Moves the cursor to a special row in the result set that can be used to insert a new row into the database. The current cursor location is remembered.
+			+ public void moveToCurrentRow() throws SQLException: Moves the cursor back to the current row if the cursor is currently at the insert row; otherwise, this method does nothing
+		D. Viewing a Result Set
+			- There is a get method for each of the possible data types, and each get method has two versions:
+				+ public integer getInt(String columnName) throws SQLException: Returns the integer in the current row in the column named columnName.
+				+ public integer getInt(integer columnIndex) throws SQLException: Returns the integer in the current row in the specified column index. The column index starts at 1, meaning the first column of a row is 1, the second column of a row is 2, and so on.
+		E. Updating a Result Set
+			- This example would explain INSERT, UPDATE and DELETE operation on a table.
+			- It should be noted that tables you are working on should have Primary Key set properly.
+III. Stored Procedure
+		A. Closing CallableStatement Object
+			- Just as you close other Statement object, for the same reason you should also close the CallableStatement object.
+			- A simple call to the close() method will do the job. If you close the Connection object first, it will close the CallableStatement object as well. However, you should always explicitly close the CallableStatement object to ensure proper cleanup.
+			
+	
+	
+	
+	
+	
+	
+	
+	
+	
