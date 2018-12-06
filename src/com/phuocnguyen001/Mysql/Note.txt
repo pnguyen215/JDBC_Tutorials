@@ -62,7 +62,27 @@ III. Stored Procedure
 			- Just as you close other Statement object, for the same reason you should also close the CallableStatement object.
 			- A simple call to the close() method will do the job. If you close the Connection object first, it will close the CallableStatement object as well. However, you should always explicitly close the CallableStatement object to ensure proper cleanup.
 			
-	
+IV. ResultSetMetaData 
+	- Get all information after that return value for ResultSet: sum column, name column,...
+V. DatabaseMetaData 
+	- Get information about: database, user-name , type data, version,...
+
+VI. CallableStatement
+	- In manager database MySQL, we will create a store procedure by following command:
+	 (in table on database, student table has two fields, include in: id, name)
+	 
+		CREATE DEFINER=`root`@`localhost` PROCEDURE `findStudent`(in username varchar(50))
+		BEGIN
+		select * 
+		from student
+		where name = username;
+		END
+		
+	- We using CallableStatement to call function or procedure has on SQL database
+
+VII. RowSet 
+	- This is an interface, helping to access on database. 
+	- RowSet is rarely used than Statement 
 	
 	
 	
