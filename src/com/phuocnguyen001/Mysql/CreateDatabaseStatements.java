@@ -13,7 +13,7 @@ public class CreateDatabaseStatements {
 		try {
 			Connection connection = JDBCConnection.getJDBCConnection();
 			Statement statement = connection.createStatement();
-			String sql = "create database person";
+			String sql = "create database dbinternet";
 			int result = statement.executeUpdate(sql);
 			System.out.println(result);
 			System.out.println("Database created successfully...");

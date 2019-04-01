@@ -15,6 +15,10 @@ public class JDBCConnection {
 		final String password = "1109chenzhenmaivien";
 		final String url = "jdbc:sqlserver://localhost:1433;databaseName=StudentDB;username=" + username + ";password="
 				+ password;
+		/*
+		 * final String url = "jdbc:sqlserver://localhost:1433;username=" + username +
+		 * ";password=" + password;
+		 */
 
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
